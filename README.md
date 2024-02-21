@@ -142,3 +142,24 @@ Creative Commons.
 
 ## Status
 This project is complete as of February 20th, 2024.
+
+## Extra Notes : Considerations with Actix
+
+Running the app with cargo locally works.
+
+![Alt text](image-17.png)
+
+Building the docker, the image does not appear in docker image ls or anything of the sort. When running the image, the GLIBC_2.XX errors come up.  
+
+![Alt text](image-18.png)
+
+The fix was replacing the debian image with debian:testing. However, a new error "curl: (56) Recv failure: Connection reset by peer" crept up that I couldn't debug, and I discovered it was an issue with the port binding, so I changed it to ".bind("0.0.0.0:8080")?". That was the final fix. 
+
+![Alt text](image-19.png)
+
+![Alt text](image-20.png)
+
+other pics:
+
+![Alt text](image-21.png)
+![Alt text](image-22.png)
