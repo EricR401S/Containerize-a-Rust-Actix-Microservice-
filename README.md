@@ -1,4 +1,4 @@
-# Containerize a Rust Axum Microservice - Lotto Generator
+# Containerize a Rust Axum/Actix Microservice - Lotto Generator
 
 
 ## Description
