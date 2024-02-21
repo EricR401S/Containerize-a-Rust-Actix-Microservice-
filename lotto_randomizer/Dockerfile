@@ -1,11 +1,22 @@
-FROM rust:latest as builder
-ENV APP lotto_randomizer
-WORKDIR /usr/src/$APP
+# Build stage
+FROM rust:1.67 AS build
+WORKDIR /app
 COPY . .
-RUN cargo install --path .
+RUN cargo build --release
 
-FROM debian:testing-slim
-RUN apt-get update && rm -rf /var/lib/apt/lists/*
-COPY --from=builder /usr/local/cargo/bin/$APP /usr/local/bin/$APP
-EXPOSE 8080
-CMD ["lotto_randomizer"]
+# Distroless runtime stage
+FROM gcr.io/distroless/cc-debian11
+COPY --from=build /app/target/release/lotto_randomizer /app/
+
+# Use non-root user
+USER nonroot:nonroot
+
+# Set up app directory
+ENV APP_HOME=/app
+WORKDIR $APP_HOME
+
+# Expose port
+EXPOSE 3000
+
+# Run app
+ENTRYPOINT ["/app/lotto_randomizer"]
