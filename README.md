@@ -6,6 +6,8 @@ In this project, we containerize an Rust Axum web application, which generates r
 
 ## Why a lottery number generator?
 
+One of the trademark conversation pieces for the elderly community in Puerto Rico actually revolves around playing the lotto games, known as "Pega 3", "Pega 4", and "Lotería Electrónica". I would often see them strike new friendships and conversations about what number combination looks pretty, how it wouldn't hurt to have an extra 200 dollars, and how they would be happy with even with 10,000 dollars, not even a full 100K. 
+
 ## Usage
 
 Apprunner Link : https://ja3mrdz8ra.us-east-2.awsapprunner.com/
