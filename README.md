@@ -6,7 +6,7 @@ In this project, we containerize an Rust Axum web application, which generates r
 
 ## Why a lottery number generator?
 
-One of the trademark conversation pieces for the elderly community in Puerto Rico actually revolves around playing the lotto games, known as "Pega 3", "Pega 4", and "Lotería Electrónica". I would often see them strike new friendships and conversations about what number combination looks pretty, how it wouldn't hurt to have an extra 200 dollars, and how they would be happy with even with 10,000 dollars, not even a full 100K. 
+One of the trademark conversation pieces for the elderly community in Puerto Rico actually revolves around playing the lotto games, known as "Pega 3", "Pega 4", and "Lotería Electrónica". I would often see them strike new friendships and conversations about what number combination looks pretty, how it wouldn't hurt to have an extra 200 dollars, and how they would be happy with even with 10,000 dollars, not even a full 100K. I thought it would be nice if I had a number for them for the next time in which I see them. However, I don't want them to use the app if it means them losing the conversation piece. It should be an afterthought if and only if they needed a bit more numerical inspiration.
 
 ## Usage
 
@@ -163,3 +163,5 @@ other pics:
 
 ![Alt text](image-21.png)
 ![Alt text](image-22.png)
+
+![Alt text](image-23.png)
