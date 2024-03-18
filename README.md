@@ -170,7 +170,7 @@ deploy-aws:
 
 8. Final Step :  Configure to run on AWS Apprunner. I recommend the options shown in the image, allowing you to choose your public repository and having Apprunner automatically re-deploy the service as new images are pushed to AWS. As for the role, I was able to leverage the regular "AppRunnerECRAccessRole", without any special permissions for this project. If you needed to automate the process, Github Actions and different types of roles or permissions might be necessary.  
 
-Apprunner Axum Version Link:https://ja3mrdz8ra.us-east-2.awsapprunner.com/
+(DEFUNCT) Apprunner Axum Version Link:https://ja3mrdz8ra.us-east-2.awsapprunner.com/
 
 ![alt text](image-35.png)
 
