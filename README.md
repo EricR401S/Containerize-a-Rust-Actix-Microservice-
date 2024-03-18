@@ -4,6 +4,8 @@
 ## Description
 In this project, we containerize an Rust Actix/Axum web application, which generates random numbers according to the amount of digits that a user wants. I also managed to deploy it to AWS Apprunner, making the microservice accessible via the cloud, versus a local level.
 
+[Click Here for this Project's Demo Video!!!](https://www.youtube.com/watch?v=b7JuXXEUnbU)
+
 ## Why a lottery number generator?
 
 One of the trademark conversation pieces for the elderly community in Puerto Rico actually revolves around playing the lotto games, known as "Pega 3", "Pega 4", and "Lotería Electrónica". I would often see them strike new friendships and conversations about what number combination looks pretty, how it wouldn't hurt to have an extra 200 dollars, and how they would be happy with even with 10,000 dollars, not even a full 100K. I thought it would be nice if I had a number for them for the next time in which I see them. However, I don't want them to use the app if it means them losing the conversation piece. It should be an afterthought if and only if they needed a bit more numerical inspiration.
