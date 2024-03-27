@@ -21,7 +21,7 @@ test:
 
 
 deploy-aws:
-	cargo build
+	# cargo build
 	aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 667719398048.dkr.ecr.us-east-2.amazonaws.com	
 	docker build -t lotto_actix .	
 	docker tag lotto_actix:latest 667719398048.dkr.ecr.us-east-2.amazonaws.com/lotto_actix:latest
