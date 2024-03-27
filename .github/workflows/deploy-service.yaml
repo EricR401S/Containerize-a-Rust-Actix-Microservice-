@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v3 # changed from 2
 
       - name: Navigate to project directory
-        run: cd lotto_actix
+        run: cd ./lotto_actix
 
       - name : Check contents
         run: ls
