@@ -15,9 +15,9 @@ One of the trademark conversation pieces for the elderly community in Puerto Ric
 Apprunner Actix Version Link : https://qpmrrrsni2.us-east-2.awsapprunner.com/
 
 
-![Alt text](image-25.png)
+![Alt text](images/image-25.png)
 
-![Alt text](image-26.png)
+![Alt text](images/image-26.png)
 
 At the link, add a "/digit" like "/4", to obtain your randomly generated number. Happy generating!!!!
 
@@ -46,11 +46,11 @@ For those not using the AWS Cloud 9 environment, the required setup will be inst
 
     * For the IAM user, I opted for this combination of permissions. The codedeploy ones are likely not necessary, but I didn't test that case.
 
-    ![Alt text](image-3.png)
+    ![Alt text](images/image-3.png)
 
     * For the AWS Cloud 9 role attached to the instance, I chose these permissions.
 
-    ![Alt text](image-2.png)
+    ![Alt text](images/image-2.png)
 
 ## Setup Instructions
 
@@ -105,7 +105,7 @@ async fn main() -> std::io::Result<()> {
 cargo build
 cargo run
 ```
-![alt text](image-27.png)
+![alt text](images/image-27.png)
 
 4. In a separate terminal session, run "curl 'localhost:3000'" and "curl 'localhost:3000/5'", to see if it works locally. Remember to adjust these commands to the unique functionality of your microservice. 
 ```
@@ -114,13 +114,13 @@ curl 'localhost:8080/5'
 # port 3000 for axum version of project
 ```
 
-![alt text](image-28.png)
+![alt text](images/image-28.png)
 
 5. Terminate your original terminal session running the "cargo run" command with by pressing control+c. Now, Proceed to building your docker. The dockerfile used for the project is derived from the MLOPS [template](https://github.com/nogibjj/rust-mlops-template/blob/main/webdocker/Dockerfile) from [Noah Gift](https://noahgift.com/). 
 ```
 docker build -t any_lowercase_name_for_your_image .
 ```
-![alt text](image-29.png)
+![alt text](images/image-29.png)
 
 #### Warning : Hours of Debugging Can be Avoided
 
@@ -151,15 +151,15 @@ docker run -dp 8080:8080 number_generator # 3000 for the axum version
 # docker ps # to get the container id
 # docker stop <your_container_id>
 ```
-![alt text](image-31.png)
+![alt text](images/image-31.png)
 
 7. (Optional) Deploy the app to Apprunner : Part 1. We have to configure an ECR repository in AWS. It's an incredibly straightforward process, and I recommend making a public ECR repository. As soon as it is done, look for the push commands for your repository. Then appropriately push the image to the repository. I put my sequence of commands as a "make deploy-aws".
 
-![alt text](image-32.png)
+![alt text](images/image-32.png)
 
-![alt text](image-33.png)
+![alt text](images/image-33.png)
 
-![alt text](image-34.png)
+![alt text](images/image-34.png)
 
 ```
 deploy-aws:
@@ -174,27 +174,27 @@ deploy-aws:
 
 (DEFUNCT) Apprunner Axum Version Link:https://ja3mrdz8ra.us-east-2.awsapprunner.com/
 
-![alt text](image-35.png)
+![alt text](images/image-35.png)
 
 For this image, I also changed the ports and adjusted the health checks, so that the deployment would not falsely fail quickly. If necessary, upgrade the virtual cpu for the service.
 
-![alt text](image-36.png)
+![alt text](images/image-36.png)
 
 The link from your AppRunner, once deployed, is the link to your service, where the end user must add the required information (in my case, backslashes and digits) to access the functionality of the microservice. As for how my microservice appeared, look at my result section.
 
-![Alt text](image-24.png)
+![Alt text](images/image-24.png)
 
 ## Result
 
 Assignment Requirement - Running the docker locally:
 
-![alt text](image-31.png)
+![alt text](images/image-31.png)
 
 Here is an example of my deployed app, the lottery number generator.
 
-![Alt text](image-25.png)
+![Alt text](images/image-25.png)
 
-![Alt text](image-26.png)
+![Alt text](images/image-26.png)
 
 ## Licenses
 Creative Commons.
