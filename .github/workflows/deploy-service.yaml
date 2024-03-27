@@ -33,7 +33,7 @@ jobs:
       #     aws-region: us-east-2
 
       - name: Deploy Docker image # Build Docker Image
-        run: make deploy-aws # docker build -t your_image_name:latest .
+        run:  cd ./lotto_actix && make deploy-aws # docker build -t your_image_name:latest .
       
       # - name: Tag Docker image
       #   run: docker tag your_image_name:latest ${{ steps.login-ecr.outputs.registry }}/${{ github.repository_owner }}/your_image_name:latest
