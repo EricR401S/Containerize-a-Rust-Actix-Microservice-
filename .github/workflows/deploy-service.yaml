@@ -13,6 +13,9 @@ jobs:
 
       - name: Navigate to project directory
         run: cd lotto_actix
+
+      - name : Check contents
+        run: ls
       
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
