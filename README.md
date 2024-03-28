@@ -196,6 +196,39 @@ Here is an example of my deployed app, the lottery number generator.
 
 ![Alt text](images/image-26.png)
 
+9. Continuouse Integration/Deployment : Since AppRunner is set to automatically redeploy itself when the ECR image changes, the only thing left to configure is the automatic deployment of the docker image to ECR. Here are the actions and the snapshot of the successfully completed deployment.For this process to succeed, I added my keys as secrets to the repository.
+```
+name: Deploy to ECR # CI/CD Pipeline
+on:
+  push:
+    branches:
+      - main  # adjust the branch name as needed
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3 # changed from 2
+
+      - name: Navigate to project directory
+        run: cd ./lotto_actix
+
+      - name : Check contents
+        run: ls
+      
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2
+
+      - name: Deploy Docker image # Build Docker Image
+        run:  cd ./lotto_actix && make deploy-aws 
+```
+![alt text](images/image-actions.png)
+
 ## Licenses
 Creative Commons.
 
