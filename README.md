@@ -184,18 +184,6 @@ The link from your AppRunner, once deployed, is the link to your service, where 
 
 ![Alt text](images/image-24.png)
 
-## Result
-
-Assignment Requirement - Running the docker locally:
-
-![alt text](images/image-31.png)
-
-Here is an example of my deployed app, the lottery number generator.
-
-![Alt text](images/image-25.png)
-
-![Alt text](images/image-26.png)
-
 9. Continuouse Integration/Deployment : Since AppRunner is set to automatically redeploy itself when the ECR image changes, the only thing left to configure is the automatic deployment of the docker image to ECR. Here are the actions and the snapshot of the successfully completed deployment.For this process to succeed, I added my keys as secrets to the repository.
 ```
 name: Deploy to ECR # CI/CD Pipeline
@@ -228,6 +216,18 @@ jobs:
         run:  cd ./lotto_actix && make deploy-aws 
 ```
 ![alt text](images/image-actions.png)
+
+## Result
+
+Assignment Requirement - Running the docker locally:
+
+![alt text](images/image-31.png)
+
+Here is an example of my deployed app, the lottery number generator.
+
+![Alt text](images/image-25.png)
+
+![Alt text](images/image-26.png)
 
 ## Licenses
 Creative Commons.
